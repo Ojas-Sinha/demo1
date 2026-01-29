@@ -1,1 +1,3 @@
-hello f1 mybranchConflict - master
+
+conflict - mybranch
+>>>>>>> mybranch
