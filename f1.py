@@ -311,6 +311,9 @@ data = {
     'Is_Spam': ['Spam', 'Not Spam', 'Spam', 'Not Spam', 'Spam', 'Not Spam']
 }
 df = pd.DataFrame(data)
+Suitability of Naïve Bayes:
+
+It is a probabilistic classifier that works efficiently with discrete, categorical, or binary features (Yes/No). It assumes feature independence, which, while "naive," makes it very fast to train and effective at calculating the probability of a document belonging to a class.
 
 # Initialize LabelEncoder
 le = LabelEncoder()
