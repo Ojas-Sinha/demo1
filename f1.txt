@@ -1,3 +1,44 @@
+1. Write a Python program to compute the following descriptive statistics for both Study_Hours and Exam_Score:
 
-conflict - mybranch
->>>>>>> mybranch
+ Mean
+
+ Median
+
+ Standard Deviation (6 Marks)
+Assume that the Exam_Score follows a normal distribution.
+
+b)Write a Python program to calculate the probability that a randomly selected student scores more than 75 marks. (2 Marks)
+
+c) Plot a histogram for Exam_Score and interpret whether the distribution appears normal or skewed. (2 Marks)
+
+d) Based on the statistical results, briefly explain the relationship between study hours and exam performance. (2 Marks)
+
+
+import numpy as np
+from scipy.stats import norm
+
+study_hrs = np.array([2, 4, 6, 8, 10, 12, 14])
+score = np.array([45, 50, 60, 70, 78, 85, 90])
+
+print("Study Hours")
+print("Mean:", np.mean(study_hrs))
+print("Median:", np.median(study_hrs))
+print("Std Dev:", np.std(study_hrs))
+
+print("\nExam Scores")
+print("Mean:", np.mean(score))
+print("Median:", np.median(score))
+print("Std Dev:", np.std(score))
+
+
+#b)Assume that the Exam_Score follows a normal distribution. Write a Python program to calculate the probability
+#that a randomly selected student scores more than 75 marks. (2 Marks)
+prob = 1 - norm.cdf(75, np.mean(score), np.std(score))
+print("\nProbability of scoring more than 75:", prob)
+#This Python code snippet calculates the probability that a randomly selected score is greater than 75, assuming the scores follow a normal distribution.
+#Here is a breakdown of the formula:
+#np.mean(score): Calculates the average value of the data set.
+#np.std(score): Calculates the standard deviation (spread) of the data set.
+#norm.cdf(75, mean, std): scipy.stats.norm.cdf calculates the Cumulative Distribution Function.
+#This function returns the probability that a value is less than or equal to 75.
+#1 - ...: Since the total probability under a normal curve is 1, subtracting the CDF result from 1 gives the upper tail: the probability that a value is greater than 75.
